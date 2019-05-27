@@ -12,14 +12,16 @@ export default class HeaderContainer extends Component {
                     src={this.props.head.src}
                     alt={this.props.head.alt}
                 />
-                <Title 
-                    title={this.props.head.title}
-                    handle={this.props.head.handle}
-                    date={this.props.head.date}
-                />
-                <Content
-                    copy={this.props.head.copy}
-                />
+                <section className="divider">
+                    <Title 
+                        title={this.props.head.title}
+                        handle={this.props.head.handle}
+                        date={this.props.head.date}
+                    />
+                    <Content
+                        copy={this.props.head.copy}
+                    />
+                </section>
             </section>
         )
     }

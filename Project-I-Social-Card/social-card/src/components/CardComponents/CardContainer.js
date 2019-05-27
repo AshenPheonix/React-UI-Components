@@ -3,6 +3,7 @@ import './Card.css';
 import Header from '../HeaderComponents/HeaderContainer'
 import Banner from './CardBanner';
 import Content from './CardContent';
+import Footer from '../FooterComponents/Footer';
 
 export default class CardContainer extends Component {
     constructor(props){
@@ -22,19 +23,26 @@ export default class CardContainer extends Component {
     render() {
         return (
             <div
-                onClick={this.click}
-                className='Card'
+                className='card'
             >
                 <Header
                     head={this.state.head}
                 />
-                <Banner
-                    bannerSrc={this.props.bannerSrc||'https://tk-assets.lambdaschool.com/fcd75197-7d12-46ec-bc9e-4130f34822fa_reactbackground.png'}
-                    bannerAlt={this.props.bannerAlt|| 'React Logo'}
-                />
-                <Content
-                    copy={this.props.cardCopy}
-                    cardHead={this.props.cardHead || ''}
+                <section
+                    className="clickable"
+                    onClick={this.click}
+                >
+                    <Banner
+                        bannerSrc={this.props.bannerSrc||'https://tk-assets.lambdaschool.com/fcd75197-7d12-46ec-bc9e-4130f34822fa_reactbackground.png'}
+                        bannerAlt={this.props.bannerAlt|| 'React Logo'}
+                    />
+                    <Content
+                        copy={this.props.cardCopy}
+                        cardHead={this.props.cardHead || ''}
+                    />
+                </section>
+                <Footer
+
                 />
             </div>
         )

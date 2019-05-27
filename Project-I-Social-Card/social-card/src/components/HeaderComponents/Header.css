@@ -1,1 +1,18 @@
 /* All styles for your header Components live here */
+.head{
+    display: flex;
+}
+.divider{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    display: flex;
+}
+.header p{
+    padding-left:1rem;
+    font-size: .75rem;
+}
+.header *{
+    margin: 0 0 1rem 0;
+}

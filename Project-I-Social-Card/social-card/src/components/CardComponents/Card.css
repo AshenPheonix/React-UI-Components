@@ -1,1 +1,11 @@
 /* All styles for your Card Components live here */
+.card{
+    border:1px black solid;
+    width: 590px;
+}
+.clickable{
+    cursor: pointer;
+}
+.card img{
+    max-width: 100%;
+}
