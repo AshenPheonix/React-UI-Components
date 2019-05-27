@@ -4,7 +4,7 @@ import './Card.css';
 export default class CardContent extends Component {
     render() {
         return (
-            <section>
+            <section className="cardText">
                 <h3>
                     {this.props.cardHead}
                 </h3>

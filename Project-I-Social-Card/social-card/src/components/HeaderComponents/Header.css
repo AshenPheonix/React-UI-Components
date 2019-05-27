@@ -1,6 +1,8 @@
 /* All styles for your header Components live here */
 .head{
     display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px black solid;
 }
 .divider{
     display: flex;
@@ -15,4 +17,10 @@
 }
 .header *{
     margin: 0 0 1rem 0;
+}
+
+.head img{
+    max-width: 60px;
+    max-height: 60px;
+    margin-right: .5rem;
 }

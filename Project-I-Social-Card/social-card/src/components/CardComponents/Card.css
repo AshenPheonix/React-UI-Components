@@ -5,7 +5,14 @@
 }
 .clickable{
     cursor: pointer;
+    border:lightgray solid 1px;
+    border-radius: 15px;
+    margin:10px;
+    margin-left:60px;
 }
 .card img{
     max-width: 100%;
+}
+.cardText{
+    padding-left: 1rem;
 }
