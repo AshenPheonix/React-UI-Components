@@ -10,7 +10,8 @@ export default class extends Component {
         this.state={
             disp:'0',
             action:[],
-            history:[]
+            history:[],
+            empty:false
         }
 
         this.action=this.action.bind(this)
@@ -103,20 +104,54 @@ export default class extends Component {
     }
 
     action(data){
-        if(data!=='fin'){
-            let temp={history:this.state.history.map(i=>i), disp:'0',action:this.state.action.map(i=>i)}
+        if(data!=='fin' && data!=='clear'){
+            let temp={history:this.state.history.map(i=>i), disp:'0',action:this.state.action.map(i=>i),empty:false}
             temp.history.push(this.state.disp)
             temp.action.push(data)
             this.setState(temp)
+        }else if(data==='clear'){
+            this.setState({
+                disp:'0',
+                action:[],
+                history:[],
+                empty:false
+            })
+        }
+        else if(this.state.history.length===0)
+                return
+        else{
+            let tempArray=this.state.history.map(i=>i)
+            tempArray.push(this.state.disp)
+            let ret = this.state.action.reduce((total,act,i,)=>{
+                    switch(act){
+                        case 'divide':
+                            return Number(total)/Number(tempArray[i+1])
+                            break;
+                        case 'multiply':
+                            return Number(total)*Number(tempArray[i+1])
+                            break;
+                        case 'add':
+                            return Number(total)+Number(tempArray[i+1])
+                            break;
+                        case 'subtract':
+                            return Number(total)-Number(tempArray[i+1])
+                            break;
+                        default:
+                            console.error(`bad action name:: ${act}`);
+                            return 'err'
+                            break;
+                    }
+            },this.state.history[0])
+            this.setState({history:[],action:[],disp:ret,empty:true})
         }
     }
     addNum(num){
         if(this.state.disp==='0' && num==='0')
             return;
-        if(this.state.disp==='0')
-            this.setState({disp:num})
+        if(this.state.disp==='0' || this.state.empty){
+                this.setState({disp:num,empty:false})
+        }
         else{
-            console.log(this.state.disp);
             let temp=this.state.disp
             temp+=num
             this.setState({disp:temp})
