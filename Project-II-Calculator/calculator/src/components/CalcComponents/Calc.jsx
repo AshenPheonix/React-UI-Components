@@ -54,6 +54,50 @@ export default class extends Component {
                     act="multiply"
                     symbol="&times;"
                 />
+                <NumButton
+                    number='4'
+                    sel={this.addNum}
+                />
+                <NumButton
+                    number='5'
+                    sel={this.addNum}
+                />
+                <NumButton
+                    number='6'
+                    sel={this.addNum}
+                />
+                <Action
+                    sel={this.action}
+                    act="subtract"
+                    symbol="&minus;"
+                />
+                <NumButton
+                    number='1'
+                    sel={this.addNum}
+                />
+                <NumButton
+                    number='2'
+                    sel={this.addNum}
+                />
+                <NumButton
+                    number='3'
+                    sel={this.addNum}
+                />
+                <Action
+                    sel={this.action}
+                    act="add"
+                    symbol="+"
+                />
+                <NumButton
+                    number='0'
+                    sel={this.addNum}
+                    long="true"
+                />
+                <Action
+                    sel={this.action}
+                    act="fin"
+                    symbol="="
+                />
             </section>
         )
     }
