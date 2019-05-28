@@ -1,0 +1,22 @@
+.button{
+    width:115px;
+    height: 94px;
+    font-family: monospace;
+    font-size: 35pt;
+    background-color: white;
+}
+
+.action-button{
+    background-color: #a0001e;
+    color:white;
+    width:110px;
+}
+
+
+.long{
+    width: 345px;
+}
+.clear{
+    color:black;
+    background-color: white;
+}
