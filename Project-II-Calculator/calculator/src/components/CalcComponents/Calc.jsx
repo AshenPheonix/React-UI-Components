@@ -8,8 +8,8 @@ export default class extends Component {
     constructor(props) {
         super(props)
         this.state={
-            disp:0,
-            action:'',
+            disp:'0',
+            action:[],
             history:[]
         }
 
@@ -103,9 +103,23 @@ export default class extends Component {
     }
 
     action(data){
-        console.log(data)
+        if(data!=='fin'){
+            let temp={history:this.state.history.map(i=>i), disp:'0',action:this.state.action.map(i=>i)}
+            temp.history.push(this.state.disp)
+            temp.action.push(data)
+            this.setState(temp)
+        }
     }
     addNum(num){
-        console.log(num)
+        if(this.state.disp==='0' && num==='0')
+            return;
+        if(this.state.disp==='0')
+            this.setState({disp:num})
+        else{
+            console.log(this.state.disp);
+            let temp=this.state.disp
+            temp+=num
+            this.setState({disp:temp})
+        }
     }
 }
